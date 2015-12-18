@@ -1,0 +1,11 @@
+<div class="col-xs-5">  
+   <form name="newPatientForm" ng-submit="newPatientForm.$valid && submit()">
+      <p>Hello Patient!</p>
+      <div class="form-group">
+         <input ng-required="true" ng-minlength="4" class="form-control" type="text" ng-model="lc.loginPatient.name" />
+      </div>
+      <div>
+         <input id="submit" ng-disabled="!newPatientForm.$valid" type="submit" class="btn btn-primary" ng-click="lc.signInPatient();" value="Login or Register" />
+      </div>
+   </form>    
+</div>
