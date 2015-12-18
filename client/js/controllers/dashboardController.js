@@ -2,8 +2,13 @@ myApp.controller('dashboardController', function($scope, $state, LoginFactory, A
    var mv = this;
 
    mv.curr_patient = LoginFactory.getPatient();
-
    mv.todayDate = new Date();
+
+   mv.checkLogin = function() {
+      if (!LoginFactory.getPatient()) {
+         $state.go('login', null, { reload: true });
+      }
+   }
 
    mv.index = function() {
       console.log('fetch appts');
@@ -29,8 +34,8 @@ myApp.controller('dashboardController', function($scope, $state, LoginFactory, A
              angular.lowercase(row._patient.name).indexOf(angular.lowercase(mv.searchAppts) || '') !== -1);
    };
 
+   mv.checkLogin();
 
    mv.index();
 
-   //mv.checkLogin();
 });

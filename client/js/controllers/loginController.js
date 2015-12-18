@@ -10,9 +10,9 @@ myApp.controller('loginController', function($scope, $state, LoginFactory) {
    mv.checkLogin = function() {
       console.log(LoginFactory.getPatient());
       if (LoginFactory.getPatient()) {
-         $state.go('dashboard.main');
+         $state.go('dashboard.main', null, { reload: true });
       }
    }
 
-   //mv.checkLogin();
+   mv.checkLogin();
 });

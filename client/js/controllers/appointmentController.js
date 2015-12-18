@@ -4,7 +4,7 @@ myApp.controller('appointmentController', function($scope, $state, LoginFactory,
    mv.curr_patient = LoginFactory.getPatient();
    mv.showError = false;
    mv.validForm = false;
-   
+
 
    mv.addAppointment = function() {
       var info = {
@@ -20,6 +20,4 @@ myApp.controller('appointmentController', function($scope, $state, LoginFactory,
          }
       })
    }
-
-   //mv.checkLogin();
 });
